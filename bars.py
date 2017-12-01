@@ -42,13 +42,13 @@ def get_closest_bar(_json_data, longitude, latitude):
 if __name__ == '__main__':
     filepath = input('Введите адрес файла: ')
     json_data = load_data(filepath)
-    longitude = float(input('Укажите долготу > '))
-    latitude = float(input('Укажите широту > '))
+    longitude = float(input('Введите координаты долготы (Пример ввода: 38.2323): '))
+    latitude = float(input('Введите координаты широты (Пример ввода: 38.2323): '))
     print('Самый большой бар - ', get_biggest_bar(json_data)['properties']['Attributes']['Name'],',',
           'Количество мест:', get_biggest_bar(json_data)['properties']['Attributes']['SeatsCount'])
     print('Самый маленький бар - ', get_smallest_bar(json_data)['properties']['Attributes']['Name'],',',
           'Количество мест: ', get_smallest_bar(json_data)['properties']['Attributes']['SeatsCount'])
     print('Ближайший к Вам бар - ', get_closest_bar(json_data, longitude, latitude)['properties']['Attributes']['Name'], ',',
-          'его адрес: ', get_closest_bar(json_data, longitude, latitude)['properties']['Attributes']['Address'], ',',
+          'адрес: ', get_closest_bar(json_data, longitude, latitude)['properties']['Attributes']['Address'], ',',
           'Количество мест: ', get_closest_bar(json_data, longitude, latitude)['properties']['Attributes']['SeatsCount'])
     
